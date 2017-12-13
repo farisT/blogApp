@@ -1,0 +1,23 @@
+html
+	head
+		title Index
+	style
+		include pug.css
+	nav
+		include nav.pug
+	body
+		br
+		h1 Post a message to the Cool Blogger!
+
+
+		p You are posting as #{username}
+
+
+		form.messageform(method="POST", action="messageposter")
+			input(type="text" name="title" placeholder= "The title of your post")
+			input(type="text" name="body" placeholder= "Say something!")
+			input(type="submit" value="Post it!")
+
+
+
+

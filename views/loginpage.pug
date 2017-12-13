@@ -1,0 +1,22 @@
+html
+	head
+	style
+		include pug.css
+	nav
+		include nav.pug
+	body
+		br
+		br
+		if(username)
+			ul
+				li #{username}
+				br
+				form(method="POST", action="/logout")
+					input(type="submit" value="Logout")
+		else
+			ul
+				li.loginform Login
+					form(method="POST",action="/loginroute")
+						input(type="text" name="username")
+						input(type="password" name="password")
+						input(type="submit" value="Login")

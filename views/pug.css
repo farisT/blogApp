@@ -1,0 +1,92 @@
+ul.nav {
+
+	height: 75px;
+
+}
+
+
+
+.nav li {
+    float: left;
+    list-style: none;
+}
+
+.nav li a {
+    display: inline-block;
+    color: black;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+
+}
+
+.nav li a:hover {
+    background-color: pink;
+}
+
+nav {
+
+	background-color:teal;
+
+}
+
+
+
+
+body {
+
+	text-align: center;
+}
+
+.loginform {
+    
+    text-decoration: none;
+	text-align: center;
+    list-style: none;
+
+}
+
+.username {
+
+    float: right;
+    margin-right: 20px;
+
+
+}
+
+.logout {
+
+	max-width: 50%;
+    float: right;
+    margin-right: 10px;
+}
+
+
+
+.messageform {
+
+
+}
+
+.messageform input {
+
+	padding: 20px;
+    text-align: center;
+
+}
+
+.center {
+
+    text-align: center;
+    list-style: none;
+    padding: 0
+
+}
+
+ul.center {
+
+    border: 2px solid black;
+    padding-top: 5px;
+    padding-bottom: 10px;
+
+}

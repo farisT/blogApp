@@ -1,0 +1,17 @@
+html
+	head
+		title Index
+	style
+		include pug.css
+	nav
+		include nav.pug
+	body
+		br
+		h3 Join the The Cool Blogger! (only for cool people)
+
+		form(method="POST", action="/register")
+			input(type="text" name="user")
+			input(type="password" name="pass")
+			input(type="submit" value="Register")
+
+

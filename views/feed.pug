@@ -1,0 +1,23 @@
+html
+	head
+		title Index
+	style
+		include pug.css
+	nav
+		include nav.pug
+	body
+		br
+		h3 Your blog posts
+
+
+		- for (var i = 0; i < allmessages.length; i++) 
+		
+			ul.center Post #{[i+1]} 
+				br
+				br
+				li.center Title : #{allmessages[i].title}
+				br
+				li.center Body : #{allmessages[i].body}
+
+
+

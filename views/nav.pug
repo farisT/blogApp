@@ -1,0 +1,45 @@
+nav
+	ul.nav
+		br
+		if(username)
+
+			li
+				a(href="/profilepage") #{username}
+
+			li
+				a(href="/blogposts") Post to your blog
+
+			li
+				a(href="/feed") Feed
+
+			li.username 
+
+			form.logout(method="POST" action="/logout")
+				input(type="submit" value="Logout")
+
+		else
+			li.nav
+				a(href="/") Home
+
+			li.nav
+				a(href="/loginpage") Login
+
+			li.nav
+				a(href="/registerpage") Register
+
+
+
+//- if(username)
+//- 	ul
+//- 		li #{username}
+//- 		br
+//- 		form(method="POST", action="/logout")
+//- 			input(type="submit" value="Logout")
+//- else
+//- 	ul
+//- 		li Login
+//- 		form(method="POST", action="/loginroute")
+//- 			input(type="text" name="username")
+//- 			input(type="password" name="password")
+//- 			input(type="submit" value="Login")
+
