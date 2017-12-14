@@ -71,8 +71,8 @@ app.get("/supersecretroute", (req,res)=> {
 
 
 
-app.listen(3000, function() {
-	console.log("running on 3000")
+app.listen(80, function() {
+	console.log("running on 80")
 })
 
 
