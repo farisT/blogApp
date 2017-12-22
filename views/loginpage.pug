@@ -17,6 +17,8 @@ html
 			ul
 				li.loginform Login
 					form(method="POST",action="/loginroute")
-						input(type="text" name="username")
-						input(type="password" name="password")
+						input(type="text" name="username" placeholder="Username")
+						input(type="password" name="password" placeholder="Password")
 						input(type="submit" value="Login")
+
+		p #{text}

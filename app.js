@@ -6,6 +6,8 @@ const Client = pg.Client
 require('dotenv').load();
 var cookieParser = require("cookie-parser");
 const session = require('express-session');
+var bcrypt = require('bcrypt');
+
 
 app.use(bodyParser.urlencoded())
 app.use(cookieParser())
@@ -34,11 +36,11 @@ app.get("/", (req,res)=> {
 
 
 
-require('./routes/loginroute.js')(app, client)
+require('./routes/loginroute.js')(app, client,bcrypt)
 require('./routes/logout.js')(app,client)
 require('./routes/loginpage.js')(app,client)
 require('./routes/registerpage.js')(app)
-require('./routes/register.js')(app,client)
+require('./routes/register.js')(app,client,bcrypt)
 require('./routes/blogposts.js')(app)
 require('./routes/messageposter.js')(app, client)
 require('./routes/profilepage.js')(app)
@@ -71,8 +73,8 @@ app.get("/supersecretroute", (req,res)=> {
 
 
 
-app.listen(80, function() {
-	console.log("running on 80")
+app.listen(3000, function() {
+	console.log("running on 3000")
 })
 
 

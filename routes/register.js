@@ -1,8 +1,12 @@
-module.exports = (app, client) => {
+module.exports = (app, client,bcrypt) => {
     app.post("/register", (req, res)=> {
-
+        
         var userName = req.body.user
         var passWord = req.body.pass
+
+     
+        var hash = bcrypt.hashSync(passWord, 10);
+//  
         console.log(req.body.user + ' and ' + req.body.pass)
 
         const query1 = {
@@ -10,7 +14,7 @@ module.exports = (app, client) => {
         }
 
         const query2 = {
-            text: `INSERT INTO users (username, password) values ('${userName}', '${passWord}');`
+            text: `INSERT INTO users (username, password) values ('${userName}', '${hash}');`
         }
 
         client.query(query1, (err, result) =>{
@@ -19,7 +23,7 @@ module.exports = (app, client) => {
             if (result.rows.length <= 0){
                 client.query(query2)
                 req.session.user = {name: userName}
-                req.session.password = { password: passWord }
+                req.session.password = { password: hash }
                 console.log("req.session.user.name: ", req.session.user.name)
                 console.log("req.session.user.password: ", req.session.password.password)
                 console.log("query 2 executed, inserting done")

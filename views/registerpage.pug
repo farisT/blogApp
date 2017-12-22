@@ -10,8 +10,10 @@ html
 		h3 Join the The Cool Blogger! (only for cool people)
 
 		form(method="POST", action="/register")
-			input(type="text" name="user")
-			input(type="password" name="pass")
+			input(type="text" name="user" placeholder="Username")
+			input(type="password" name="pass" placeholder="Password")
 			input(type="submit" value="Register")
+
+		p #{text}
 
 
